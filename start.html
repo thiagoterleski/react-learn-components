@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Components</title>
+  <style media="screen">
+  html,body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  .scenary {
+    width: 100%;
+    height: 100%;
+    background-color: #E1F5FE;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    flex:5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .ground {
+    flex:1;
+    background-color: #80CBC4;
+  }
+
+  .tower {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+  .watter-supply {
+    width: 60px;
+    height: 40px;
+    background-color: #D7CCC8;
+    border-top: #BCAAA4 solid 3px;
+    margin-left: 10px;
+  }
+  .tower:after {
+    content: "";
+    height: 100px;
+    width: 100%;
+    bottom: -100px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.04);
+    transform: skewX(45deg);
+    transform-origin: top left;
+  }
+  /*Apartment*/
+  .apartment {
+    position: relative;
+    background-color: #EFEBE9;
+    flex:1;
+    height: 100px;
+    border-top: #E0E0E0 solid 4px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .apartment:before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    height: 100%;
+    width: 3px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .apartment:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 5px;
+    background-color: #d2d0d0;
+    padding: 0 2px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0 2px 1px;
+  }
+  .apartment.floor {
+    align-items: flex-start;
+    justify-content: center;
+  }
+  /*Windows*/
+  .window {
+    position: relative;
+    background-color:rgba(0,0,0,0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: rgba(255,255,255,0.8) solid 4px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0 2px 1px;
+    overflow: hidden;
+  }
+  .window:after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    background-color: rgba(3, 169, 244, 0.15);
+    transition: all 1s ease;
+  }
+  .window:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color:rgba(255,255,255,0.5);
+    transition: all 1s ease;
+  }
+  .window.closed:after {
+    width: 100%;
+  }
+  .window.closed:before {
+    left: 100%;
+  }
+
+  /*Person*/
+  .person {
+    position: relative;
+    margin-top: 20px;
+    width: 30px;
+    margin-left: 20px;
+  }
+
+
+  .door {
+    background-color:rgba(0,0,0,0.4) solid 2px;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="scenary">
+    <div class="container">
+      <div class="tower">
+        <div class="watter-supply"></div>
+        <div class="apartment">
+          <div class="window">
+            <img class="person" width="20" src="./src/boy.svg" />
+          </div>
+          <div class="window"></div>
+        </div>
+        <div class="apartment">
+          <div class="window">
+            <img class="person" width="20" src="./src/boy.svg" />
+          </div>
+          <div class="window">
+            <img class="person" width="20" src="./src/boy.svg" />
+          </div>
+        </div>
+        <div class="apartment">
+          <div class="window closed"></div>
+          <div class="window"></div>
+        </div>
+        <div class="apartment">
+          <div class="window"></div>
+          <div class="window closed"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ground"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+html,body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.scenery {
+  width: 100%;
+  height: 100%;
+  background-color: #E1F5FE;
+  display: flex;
+  flex-direction: column;
+  transition: all 1s ease;
+}
+
+.scenery.is-night {
+  filter: contrast(.8);
+  background-color: #5C6BC0;
+}
+
+
+.container {
+  flex:5;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.ground {
+  flex:1;
+  transition: all 1s ease;
+  background-color: #A5D6A7;
+}
+
+.scenery.is-night .ground {
+  background-color: #006064;
+}
+
+.tree {
+  position: relative;
+  width: 5px;
+  background-color: #A1887F;
+  height: 100px;
+  margin: 0 100px;
+}
+.tree:before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #81C784;
+  border-radius: 50%;
+  top: -50px;
+  left: 50%;
+  margin-left: -40px;
+}
+.tree:after {
+  content: "";
+  width: 5px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+
+  position: absolute;
+  bottom: -50px;
+  height: 50px;
+  transform-origin: top left;
+  transform: skewX(45deg);
+}
+/* Moon */
+.moon {
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  transition: all 1s ease;
+  background-color: rgba(255, 255, 255, 0.80);
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+/*Tower*/
+.tower {
+  position: relative;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 0 60px;
+  transition: all 1s ease;
+}
+.watter-supply {
+  width: 60px;
+  height: 40px;
+  background-color: #D7CCC8;
+  border-top: #BCAAA4 solid 3px;
+  transition: all 1s ease;
+  margin-left: 10px;
+}
+.scenery.is-night .watter-supply {
+  background-color: #757575;
+  border-top-color: #616161;
+}
+.tower:after {
+  content: "";
+  height: 100px;
+  width: 100%;
+  bottom: -100px;
+  position: absolute;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+  transform: skewX(45deg);
+  transform-origin: top left;
+  transition: all 1s ease;
+}
+.scenery.is-night .tower:after {
+  transform: skewX(-45deg);
+  height: 40px;
+  bottom: -40px;
+}
+/*Apartment*/
+.apartment {
+  position: relative;
+  background-color: #EFEBE9;
+  flex:1;
+  height: 100px;
+  transition: all 1s ease;
+  border-top: #E0E0E0 solid 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.scenery.is-night .apartment {
+  background-color: #616161;
+  border-top-color: #424242;
+}
+.apartment:before {
+  content: "";
+  position: absolute;
+  right: 10px;
+  height: 100%;
+  width: 3px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.apartment:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 5px;
+  background-color: #d2d0d0;
+  padding: 0 2px;
+  transition: all 1s ease;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 2px 1px;
+}
+.scenery.is-night .apartment:after {
+  background-color: #616161;
+}
+.apartment.floor {
+  align-items: flex-start;
+  justify-content: center;
+}
+/*Windows*/
+.window {
+  position: relative;
+  background-color:rgba(0,0,0,0.1);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease;
+  border: rgba(255,255,255,0.8) solid 4px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 2px 1px;
+}
+.scenery.is-night .window {
+  border-color: rgba(0,0,0,0.7);
+  background-color:rgba(0,0,0,0.8);
+}
+.window:after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  background-color: rgba(3, 169, 244, 0.15);
+  transition: all .400s ease;
+}
+.window:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color:rgba(255,255,255,0.5);
+  transition: all .400s ease;
+}
+.scenery.is-night .window:before {
+  background-color:rgba(255,255,255,0.1);
+}
+.window.closed:after {
+  width: 100%;
+}
+.window.closed:before {
+  transform: translateX(20px);
+}
+
+.window .balcony {
+  height: 10px;
+  width: 100%;
+  padding: 0 8px;
+  position: absolute;
+  z-index: 5;
+  bottom: -10px;
+  background-color: #D7CCC8;
+  border-bottom: rgba(0, 0, 0, 0.12) 2px solid;
+}
+
+.window .balcony:after {
+  content: "";
+  transform-origin: bottom left;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+  transform: skewX(45deg);
+  position: absolute;
+  height: 10px;
+  bottom: -10px;
+}
+
+/*Control lighst for windows*/
+.window.light-on {
+  background-color: rgba(255, 218, 34, 0.5) !important;
+}
+.window.light-on:after {
+  background-color: transparent;
+  box-shadow: rgba(255, 218, 34, 0.5) 0 0 10px;
+}
+
+/*Person*/
+.person {
+  display: none;
+  position: relative;
+  margin-top: 20px;
+  width: 30px;
+  margin-left: 20px;
+}
+
+
+.door {
+  background-color:rgba(0,0,0,0.4) solid 2px;
+}
+
+/* ToggleButton */
+.toggle-button {
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  border: 0 none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.14) 0 3px 5px;
+}
+
+.toggle-button img {
+  position: relative;
+  z-index: 3;
+  transform-origin: 50% 50%;
+  transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translate3d( 0, 0, 0) scale(1) rotate(180deg);
+  backface-visibility: hidden;
+}
+.toggle-button:active,
+.toggle-button:focus {
+  outline: none;
+}
+.toggle-button.active img {
+  transform: rotate(0) scale(1);
+}
+/*SwitchButton*/
+.switch-button {
+  width: 80px;
+  display: flex;
+  background-color: #F5F5F5;
+  border: 0 none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.switch-button.floating,
+.toggle-button.floating {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 8;
+}
+
+.switch-button:focus,
+.switch-button:active {
+  outline: none;
+}
+.switch-button .switch {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+  border-radius: 50%;
+  background-color: #E0E0E0;
+  transition: all .3s ease;
+  transform-origin: left;
+  transform: translateX(0);
+}
+.switch-button.right .switch {
+  transform: translateX(35px);
+}
