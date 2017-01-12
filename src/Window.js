@@ -1,18 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 const Window = (props) => {
-  let classState = "window";
-  if(props.closed)
-    classState += " closed";
-
-  if(props.lightOn)
-    classState += " light-on"
-
-  return <div className={ classState }></div>
-}
-Window.propTypes = {
-  closed: PropTypes.bool,
-  lightOn: PropTypes.bool
+  return <div className="window"></div>
 }
 
 export default Window;
