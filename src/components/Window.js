@@ -10,6 +10,7 @@ const Window = (props) => {
 
   return <div className={ classState }></div>
 }
+
 Window.propTypes = {
   closed: PropTypes.bool,
   lightOn: PropTypes.bool
