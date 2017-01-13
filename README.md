@@ -6,3 +6,4 @@
 npm install
 npm start
 ```
+<img src='https://cloud.githubusercontent.com/assets/2950918/21927614/8aecdf38-d96d-11e6-8ba7-58703aea8742.png' width='500' alt='Screenshot'>
