@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import Scenery from './Scenery';
+import Scenery from './components/Scenery';
 
 const App = React.createClass({
   render() {

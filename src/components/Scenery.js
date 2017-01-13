@@ -1,6 +1,6 @@
 import React from 'react';
 import Tower from './Tower';
-import ButtonTogglePeriod from './components/ButtonTogglePeriod';
+import ButtonTogglePeriod from './ButtonTogglePeriod';
 
 class Scenery extends React.Component {
 
@@ -10,6 +10,7 @@ class Scenery extends React.Component {
       isNight: false
     }
   }
+
   changeSceneryState() {
     this.setState({isNight: !this.state.isNight});
   }
