@@ -1,33 +1,30 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+
 import Tower from './Tower';
 import ButtonTogglePeriod from './ButtonTogglePeriod';
 
-class Scenery extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      isNight: false
-    }
-  }
-
-  changeSceneryState() {
-    this.setState({isNight: !this.state.isNight});
-  }
-
+class Scenery extends Component {
   render() {
-    const sceneryClass = (this.state.isNight) ? "scenery is-night" : "scenery";
+    const sceneryClass = (this.props.isNight) ? "scenery is-night" : "scenery";
     return(
       <div className={sceneryClass}>
         <div className="container">
-          <ButtonTogglePeriod
-            onChangeEvent={ this.changeSceneryState.bind(this) } />
-          <Tower isNight={ this.state.isNight } />
+          <ButtonTogglePeriod />
+          <Tower isNight={ this.props.isNight } />
         </div>
         <div className="ground"></div>
       </div>
     )
   }
 }
+Scenery.propTypes = {
+  isNight: PropTypes.bool.isRequired,
+};
 
-export default Scenery;
+export const mapStateToProps = ({ app }) => {
+  const { isNight } = app;
+  return { isNight };
+};
+
+export default connect(mapStateToProps)(Scenery);

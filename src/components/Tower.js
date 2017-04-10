@@ -1,23 +1,19 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
 import Apartment from './Apartment';
 
-class Tower extends React.Component {
+class Tower extends Component {
   render() {
     return (
       <div className="tower">
         <div className="watter-supply"></div>
-        <Apartment isNight={this.props.isNight} />
-        <Apartment isNight={this.props.isNight} />
-        <Apartment isNight={this.props.isNight} />
-        <Apartment isNight={this.props.isNight} />
-        <Apartment isNight={this.props.isNight} />
+        <Apartment />
+        <Apartment />
+        <Apartment />
+        <Apartment />
+        <Apartment />
       </div>
     )
   }
-}
-
-Tower.PropTypes = {
-  isNight: PropTypes.bool
 }
 
 export default Tower;

@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
 import Window from './Window';
 
-class Apartment extends React.Component {
+class Apartment extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,15 +18,11 @@ class Apartment extends React.Component {
   render() {
     return (
       <div className="apartment" onClick={this.changeWindowsState.bind(this)}>
-        <Window closed={ this.state.isWindowsClosed } lightOn={ this.props.isNight } />
-        <Window closed={ this.state.isWindowsClosed } lightOn={ this.props.isNight } />
+        <Window closed={ this.state.isWindowsClosed } />
+        <Window closed={ this.state.isWindowsClosed } />
       </div>
     )
   }
-}
-
-Apartment.propTypes = {
-  isNight: PropTypes.bool
 }
 
 export default Apartment;
