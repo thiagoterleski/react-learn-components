@@ -26,7 +26,6 @@ class Apartment extends React.Component {
 }
 
 Apartment.propTypes = {
-  lightsOn: PropTypes.bool,
   isNight: PropTypes.bool
 }
 
